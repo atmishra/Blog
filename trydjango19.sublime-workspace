@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"all",
+				"allposts_list	statement"
+			],
+			[
+				"fil",
+				"filter"
+			],
+			[
+				"create",
+				"create_slug	function"
+			],
+			[
+				"pre",
+				"pre_save_post_receiver	function"
+			],
+			[
+				"STA",
+				"STATIC_ROOT"
+			],
+			[
+				"url",
+				"urlpatterns	statement"
+			],
+			[
+				"D",
+				"DEBUG"
+			],
+			[
+				"ex",
+				"extends	extends"
+			],
+			[
+				"succ",
+				"Successfully"
+			],
+			[
+				"Http",
+				"HttpResponseRedirect	import"
+			],
+			[
+				"get",
+				"get_object_or_404	import"
+			],
+			[
+				"merge",
+				"mergesort	function"
+			],
+			[
+				"Mu",
+				"musicformats	statement"
+			],
+			[
+				"tr",
+				"try	Try/Except"
+			],
+			[
+				"arrange",
+				"arrangefiles	function"
+			],
+			[
 				"Pos",
 				"PostForm	class"
 			],
@@ -72,10 +132,6 @@
 				"directory	forstmt"
 			],
 			[
-				"all",
-				"all_files	statement"
-			],
-			[
 				"max",
 				"max_length"
 			]
@@ -84,34 +140,10 @@
 	"buffers":
 	[
 		{
-			"file": "trydjango19/settings.py",
+			"file": "/home/atul/mystuffs/MyProjects/pythonscripts/stack.py",
 			"settings":
 			{
-				"buffer_size": 3227,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "posts/views.py",
-			"settings":
-			{
-				"buffer_size": 810,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/post_create.html",
-			"settings":
-			{
-				"buffer_size": 160,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "posts/forms.py",
-			"settings":
-			{
-				"buffer_size": 165,
+				"buffer_size": 817,
 				"line_ending": "Unix"
 			}
 		}
@@ -155,18 +187,30 @@
 	[
 		"/home/atul/mystuffs/MyProjects/trydjango19",
 		"/home/atul/mystuffs/MyProjects/trydjango19/posts",
-		"/home/atul/mystuffs/MyProjects/trydjango19/trydjango19"
+		"/home/atul/mystuffs/MyProjects/trydjango19/posts/migrations",
+		"/home/atul/mystuffs/MyProjects/trydjango19/static",
+		"/home/atul/mystuffs/MyProjects/trydjango19/templates"
 	],
 	"file_history":
 	[
+		"/home/atul/mystuffs/MyProjects/trydjango19/templates/base.html",
 		"/home/atul/mystuffs/MyProjects/trydjango19/posts/urls.py",
-		"/home/atul/mystuffs/MyProjects/trydjango19/trydjango19/urls.py",
-		"/home/atul/mystuffs/MyProjects/trydjango19/templates/index.html",
+		"/home/atul/mystuffs/MyProjects/trydjango19/templates/post_list.html",
 		"/home/atul/mystuffs/MyProjects/trydjango19/templates/post_detail.html",
-		"/home/atul/mystuffs/MyProjects/trydjango19/posts/models.py",
+		"/home/atul/mystuffs/MyProjects/trydjango19/posts/forms.py",
 		"/home/atul/mystuffs/MyProjects/trydjango19/posts/views.py",
+		"/home/atul/mystuffs/MyProjects/trydjango19/posts/models.py",
+		"/home/atul/mystuffs/MyProjects/trydjango19/templates/post_create.html",
 		"/home/atul/mystuffs/MyProjects/trydjango19/posts/admin.py",
 		"/home/atul/mystuffs/MyProjects/trydjango19/trydjango19/settings.py",
+		"/home/atul/mystuffs/MyProjects/trydjango19/trydjango19/urls.py",
+		"/home/atul/mystuffs/MyProjects/trydjango19/templates/messages_display.html",
+		"/home/atul/mystuffs/MyProjects/trydjango19/static/css/base.css",
+		"/home/atul/mystuffs/MyProjects/trydjango19/templates/index.html",
+		"/home/atul/mystuffs/MyProjects/trydjango19/posts/tests.py",
+		"/home/atul/mystuffs/MyProjects/pythonscripts/mergesort.py",
+		"/home/atul/mystuffs/MyProjects/arrange/arrange.py",
+		"/home/atul/mystuffs/MyProjects/arrange/arrangegui.py",
 		"/home/atul/mystuffs/MyProjects/mysite/books/forms.py",
 		"/home/atul/mystuffs/MyProjects/mysite/books/templates/contact_form.html",
 		"/home/atul/mystuffs/MyProjects/mysite/books/views.py",
@@ -176,15 +220,13 @@
 		"/home/atul/mystuffs/MyProjects/mysite/books/templates/search_results.html",
 		"/home/atul/mystuffs/MyProjects/mysite/books/admin.py",
 		"/home/atul/mystuffs/MyProjects/mysite/mysite/settings.py",
-		"/home/atul/mystuffs/MyProjects/arrange/arrange.py",
-		"/home/atul/mystuffs/MyProjects/arrange/arrangegui.py",
 		"/home/atul/mystuffs/MyProjects/mysite/mysite.sublime-project",
 		"/home/atul/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/atul/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -199,6 +241,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"obj",
+			"object_list",
 			"obj"
 		],
 		"highlight": true,
@@ -207,6 +251,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"post",
+			"page_posts"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -217,123 +263,35 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "trydjango19/settings.py",
+					"file": "/home/atul/mystuffs/MyProjects/pythonscripts/stack.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3227,
+						"buffer_size": 817,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1754,
-								1754
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 741.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "posts/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 810,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								464,
-								464
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 132.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "templates/post_create.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 160,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								132,
-								132
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "posts/forms.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								165,
-								165
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -378,7 +336,7 @@
 	"project": "trydjango19.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -416,7 +374,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 226.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

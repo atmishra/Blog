@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Create Post</title>
-</head>
-<body>
-<form>
-	{form.as_p}
-	<input type="submit" name="Create Post">
+{% extends "base.html" %}
+{% block head_title %}{{block.super}}{% endblock head_title %}
+{% block content %}
+
+<div class="col-sm-6 col-sm-offset-3">
+<h3>Form</h3>
+<form method="POST" action='' enctype="multipart/form-data"> {% csrf_token %}
+	{{form.as_p}}
+	<input type="submit" class='btn btn-default' value="Create Post">
 </form>
+</div>
+{%endblock%}
 
-
-</body>
-</html>
