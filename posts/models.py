@@ -18,7 +18,7 @@ class Post(models.Model):
 	image = models.FileField(null=True,blank= True) 
 	content = models.TextField()
 	draft = models.BooleanField(default=False)
-	publish = models.DateField(auto_now=False, auto_now_add=False)
+	publish = models.DateField(auto_now=False, auto_now_add=False,default = timezone.now().date(),null=True)
 	updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
@@ -28,7 +28,7 @@ class Post(models.Model):
 		return self.title; 
 
 	def get_absolute_url(self):
-		return reverse("posts:detail",kwargs={"id":self.id})
+		return reverse("posts:detail",kwargs={"slug":self.slug})
 		# return "/posts/%s/"%(self.id)
 
 	class Meta:

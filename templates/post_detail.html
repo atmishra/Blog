@@ -23,7 +23,7 @@
 
 		{% endif %}
 		
-		{{instance.content|linebreaks}}<br/>
+		{{instance.content|safe}}<br/>
 		<a href="{% url "posts:Home" %}">Back</a>
 		</div>
 	<div class='col-sm-6 col-sm-offset-3'>
@@ -33,3 +33,4 @@
 	</div>
 
 {% endblock content %}
+

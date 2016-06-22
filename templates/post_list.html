@@ -32,7 +32,7 @@
 
 				{% endif %}
 
-			    <p>{{ post.content|linebreaks|truncatechars:120 }}</p>
+			    <p>{{ post.content|safe|truncatechars:120 }}</p>
 			    <p><a href="{{post.get_absolute_url}}" class="btn btn-primary" role="button">Read More</a></p>
 			  </div>
 			</div>
