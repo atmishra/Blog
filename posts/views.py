@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
-
+from django.utils import timezone
 # Create your views here.
 from .models import Post
 from .forms import PostForm
@@ -22,7 +22,7 @@ def posts_list(request):
 						Q(author__first_name__icontains=query)|
 						Q(author__first_name__icontains=query)
 						).distinct()
-	paginator = Paginator(allposts_list, 5) # Show 25 contacts per page
+	paginator = Paginator(allposts_list, 5) 
 
 	page = request.GET.get('page')
 	try:
@@ -35,7 +35,7 @@ def posts_list(request):
 		page_posts = paginator.page(paginator.num_pages)
 	context = {
 		"page_posts": page_posts,
-		"title": "list",
+		"title": "Home",
 		
 		}	
 	return render(request,"post_list.html",context)

@@ -12,6 +12,12 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/home/atul/mystuffs/MyProjects/Blog/blog_media_cdn"
+		},
+		{
+			"path": "/home/atul/mystuffs/MyProjects/Blog/blog_static_cdn"
 		}
 	]
 }
