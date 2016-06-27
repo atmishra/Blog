@@ -41,6 +41,7 @@ def posts_list(request):
 	return render(request,"post_list.html",context)
 
 def posts_create(request):
+	print("hello")
 	if not request.user.is_staff or not request.user.is_superuser:
 		raise Http404 
 	form = PostForm(request.POST or None, request.FILES or None )
@@ -103,4 +104,5 @@ def posts_delete(request,slug = None):
 	messages.success(request, "Successfully Deleted")
 	return redirect("posts:Home")
 
- 
+def about(request):
+	return render(request,"about.html")

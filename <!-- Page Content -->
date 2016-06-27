@@ -1,0 +1,35 @@
+<!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <h1 class="page-header">
+                    Page Heading
+                    <small>Secondary Text</small>
+                </h1>
+                {% for post in page_posts %}
+
+                <!--Blog Post -->
+
+                <h2>
+                    <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+                </h2>
+                {% if post.author.get_full_name%}
+                    <p class="lead">by <a href="index.php">{{post.author.get_full_name}}</a>
+                    </p>
+                {% endif %}
+                
+                <p><span class="glyphicon glyphicon-time"></span>{{ post.publish}}</p>
+                <hr>
+                {% if post.image %}
+                <img src="{{ post.image.url}}" class="img-responsive" class="img-rounded"/>
+                {% endif %}
+                <hr>
+
+               <p>{{ post.content|safe|truncatechars:120 }}</p>
+                <a class="btn btn-primary" href="{{post.get_absolute_url}}" >Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>

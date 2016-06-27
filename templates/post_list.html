@@ -1,94 +1,135 @@
 	{% extends "base.html" %}
 
+
+
 	{% block content %}
 
-	<div >
-	<div class="container">
-		<div class="row col-sm-8">
-		<h1><a href="{% url "posts:Home" %}">{{ title }}</a></h1>
-		</div>
-		<div class="row col-sm-4 ">
-		<form method="GET" action="">
-			<input type="text" placeholder="Search Posts" name="q" value={{ request.GET.q }}><span><input type="Submit" 
-			value="Search" class='btn btn-default'></span>
-		</form>
-		</div>
-	</div>
-		<br/>
 		{% if not page_posts %}
 			<h3>Sorry! There are no Posts.</h3>
 		{% else %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+    	           {% for post in page_posts %}
 
-			{% for post in page_posts %}
-			<div class="row">
-			<div class="col-sm-8">
-			<div class="thumbnail">
-			  <div class="caption">
-			    <h3><a href="{{post.get_absolute_url}}">{{post.title}}</a> <small>{{ post.publish}}</small></h3>
-				{% if post.author.get_full_name%}
-					<p>Author: {{post.author.get_full_name}}</p>
-				{% endif %}
-				{% if post.draft %}
-					<span style='color:red'>Draft</span>
-				{% endif %}
+                            <div class="post-preview">
 
-			    {% if post.image %}
-				<img src="{{ post.image.url}}" class="img-responsive" class="img-rounded"/>
+                            <a href="{{post.get_absolute_url}}"><h2 class="post-title">{{post.title}}</h2></a>
+                            <p class="post-meta">Posted by <a href="#">  {{post.author.get_full_name}}</a> on {{post.publish}}</p>
+                                <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span> Posted on {{ post.publish}}
+                                </p>
+                            </div>
+                            <hr>
+                            {% if post.image %}
+                            <img src="{{ post.image.url}}" class="img-responsive" class="img-rounded"/>
+                            <hr>
+                            {% endif %}
+                            
 
-				{% endif %}
+                           <p>{{ post.content|truncatechars:200|safe }}</p>
+                            <a class="btn btn-default" href="{{post.get_absolute_url}}" >Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-			    <p>{{ post.content|safe|truncatechars:120 }}</p>
-			    <p><a href="{{post.get_absolute_url}}" class="btn btn-primary" role="button">Read More</a></p>
-			  </div>
-			</div>
-			</div>
-			<hr/>
-			</div>
-			{% endfor %}
-			 <nav>
-			  <ul class="pagination pagination-lg">
-			    <li>
-			   
-			      {% if page_posts.has_previous %}
-			            <a href="?page={{ page_posts.previous_page_number }}" aria-label="Previous">
-			        
-			        	<span aria-hidden="true">&laquo;</span>
-			      		</a>
-			      {% endif %}
-			    </li>
+                            <hr> 
+                        {% endfor %} 
+                    </div>
+                
+            <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-4">
 
-			    {% for i in page_posts.paginator.page_range %}
-			    	<li><a href="?page={{i}}">{{ i }}</a></li>
-			    {% endfor %}
+                    <!-- Blog Search Well -->
+                    <div class="well">
+                        <h4>Blog Search</h4>
+                         <form action="" method="GET">
+                        <div class="input-group">
+                           
+                                <input type="text" class="form-control" placeholder="Search Blog"  name="q" value={{request.GET.q}}>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" id ="search-btn" type="button">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                                </span>
+                            
+                        </div>
+                        </form>
+                        <!-- /.input-group -->
+                    </div>
 
-			    <li>
-			    
-			        {% if page_posts.has_next %}
-			            <a href="?page={{ page_posts.next_page_number }}" aria-label="Next">
-			             <span aria-hidden="true">&raquo;</span>
-			      		</a>
-			        {% endif %}
-			       
-			    </li>
-			  </ul>
-			</nav>
-	</div>
-		{% endif %}
-<!--		<div class="pagination">
-		    <span class="step-links">
-			        {% if page_posts.has_previous %}
-			            <a href="?page={{ page_posts.previous_page_number }}">previous</a>
-			        {% endif %}
+                    <!-- Blog Categories Well -->
+                    <div class="well">
+                        <h4>Blog Categories</h4>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                    <li><a href="#">Category Name</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.col-lg-6 -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
 
-			        <span class="current">
-			            Page {{ page_posts.number }} of {{ page_posts.paginator.num_pages }}.
-			        </span>
+                    <!-- Side Widget Well -->
+                    <div class="well">
+                        <h4>Side Widget Well</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    </div>
 
-			        {% if page_posts.has_next %}
-			            <a href="?page={{ page_posts.next_page_number }}">next</a>
-			        {% endif %}
-			</span>
-	    </div> -->
+                </div>
+            </div>
+            <div>
+              <ul class="pagination pagination-lg">
+                <li>
+               
+                  {% if page_posts.has_previous %}
+                        <a href="?page={{ page_posts.previous_page_number }}" aria-label="Previous">
+                    
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                  {% endif %}
+                </li>
 
+                {% for i in page_posts.paginator.page_range %}
+                    <li><a href="?page={{i}}">{{ i }}</a></li>
+                {% endfor %}
+
+                <li>
+                
+                    {% if page_posts.has_next %}
+                        <a href="?page={{ page_posts.next_page_number }}" aria-label="Next">
+                         <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    {% endif %}
+                   
+                </li>
+              </ul>
+               
+            </div>
+
+        </div>
+
+            {% endif %}   
 	{% endblock content %}
+     {% block footer %}
+        {% include "footer.html" %}
+     {% endblock footer %}
 

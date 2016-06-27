@@ -1,0 +1,4 @@
+Django==1.9.6
+django-social-share==0.3.0
+share==1.0.4
+social==0.1.dev3

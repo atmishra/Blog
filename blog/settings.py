@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_social_share',
+
+    #Third Party Apps
+    'debug_toolbar',
+
+    #Project Apps
     'posts',
    
 ]
