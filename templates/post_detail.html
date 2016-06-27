@@ -23,7 +23,12 @@
 		 <!-- Page Header -->
 		
 	    <!-- Set your background image for this header on the line below. -->
-	    <header class="intro-header background-image" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(															0,0, 0, 0.5)),url('{{instance.image.url}}');">
+	    <header class="intro-header background-image" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0, 0, 0.5)),
+	    {% if instance.image %}
+	        url('{{instance.image.url}}');
+	     {% else %}
+	     	 url(' {% static "images/footer_lodyas.png" %}');
+	     {% endif %}">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
