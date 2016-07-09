@@ -1,5 +1,5 @@
 	{% extends "base.html" %}
-
+    {% load markdown_deux_tags %}
 
 
 	{% block content %}
@@ -25,8 +25,10 @@
                             <hr>
                             {% endif %}
                             
-
-                           <p>{{ post.content|truncatechars:200|safe }}</p>
+                            <div class="marked-content">
+                               <p >{{ post.get_marked_content|truncatechars_html:150}}</p> 
+                            </div>
+                            
                             <a class="btn btn-default" href="{{post.get_absolute_url}}" >Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                             <hr> 

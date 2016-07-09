@@ -4,6 +4,11 @@ from django.core.urlresolvers import reverse
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from django.utils import timezone
+from django.utils.safestring import mark_safe
+
+
+from markdown_deux import markdown
+
 ''' def upload_location(instance,filename):
 	return "%s/%s"%instance.id,filename
 '''
@@ -30,6 +35,10 @@ class Post(models.Model):
 	def get_absolute_url(self):
 		return reverse("posts:detail",kwargs={"slug":self.slug})
 		# return "/posts/%s/"%(self.id)
+
+	def get_marked_content(self):
+		
+		return mark_safe(markdown(self.content))
 
 	class Meta:
 		ordering = ["-timestamp","-updated"]

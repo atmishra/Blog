@@ -9,6 +9,7 @@
     <meta name="author" content="">
 
     <title>{{ title }}</title>
+    {{ form.media }}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,8 +38,10 @@
 				{% endblock content %}
 		
 			 <!-- /.container -->
-		{% block footer %}
-		{% endblock footer %}
+				
+				{% block footer %}
+				{% endblock footer %}
+
 		
 			<!-- jQuery -->
 			<script src="http://code.jquery.com/jquery-latest.min.js"></script>

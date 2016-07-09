@@ -4,7 +4,14 @@
  * Licensed under Apache 2.0 (https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+$(document).ready(function(){
+  $(".marked-content img").each(function(){
+    $(this).addClass("img-responsive")
+  })
+});
+
 // Contact Form Scripts
+
 
 $(function() {
 
@@ -1030,3 +1037,4 @@ jQuery(document).ready(function($) {
             });
     }
 });
+
