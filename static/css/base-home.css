@@ -71,6 +71,7 @@ hr.small {
   font-size: 18px;
   font-style: italic;
   margin-top: 0;
+  margin-bottom: 0;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
@@ -274,4 +275,11 @@ font-size: 24px;
 .wmd-panel{
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.post-options{
+  margin-top: 70px;
+}
+.post-options .btn{
+  padding: 7px;
 }

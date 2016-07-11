@@ -16,12 +16,15 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include,url
-from django.contrib import admin
+import django.contrib.auth.views
 
+from django.contrib import admin
+admin.autodiscover()
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
     url(r'^posts/',include("posts.urls", namespace = "posts")),
     
 ]

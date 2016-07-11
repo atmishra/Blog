@@ -12,14 +12,26 @@
                 <div class="col-md-8">
     	           {% for post in page_posts %}
 
-                            <div class="post-preview">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="post-preview">
 
-                            <a href="{{post.get_absolute_url}}"><h2 class="post-title">{{post.title}}</h2></a>
-                            <p class="post-meta">Posted by <a href="#">  {{post.author.get_full_name}}</a> on {{post.publish}}</p>
-                                <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span> Posted on {{ post.publish}}
-                                </p>
+                                <a href="{{post.get_absolute_url}}"><h2 class="post-title">{{post.title}}</h2></a>
+                                <p class="post-meta"> by <a href="#">  {{post.author.get_full_name}}</a> </p>
+                                    <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span> Posted on {{ post.publish}}
+                                    </p>
+                                </div>
                             </div>
+                            {% if user.is_authenticated %}
+                                <div class="col-sm-4 col-sm-offset-2 post-options">
+                                   <a class="btn btn-danger btn-sm" href="{% url "posts:delete" post.slug %}"> <span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a>
+                                     <a href="{% url "posts:update" post.slug %}" type="button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Edit</a> 
+                                </div>
+                            {% endif %}
+                        </div>
+                    
                             <hr>
+                        
                             {% if post.image %}
                             <img src="{{ post.image.url}}" class="img-responsive" class="img-rounded"/>
                             <hr>

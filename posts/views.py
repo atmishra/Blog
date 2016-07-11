@@ -2,6 +2,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 # Create your views here.
@@ -40,6 +41,7 @@ def posts_list(request):
 		}	
 	return render(request,"post_list.html",context)
 
+@login_required
 def posts_create(request):
 	print("hello")
 	if not request.user.is_staff or not request.user.is_superuser:
@@ -75,7 +77,7 @@ def posts_detail(request,id = None, slug=None):
 
 
 
-
+@login_required
 def posts_update(request, slug=None):
 	if not request.user.is_staff or not request.user.is_superuser:
 		raise Http404 
@@ -95,7 +97,7 @@ def posts_update(request, slug=None):
 	return render(request, "post_create.html", context)
 
 	
-
+@login_required
 def posts_delete(request,slug = None):
 	if not request.user.is_staff or not request.user.is_superuser:
 		raise Http404 
