@@ -283,3 +283,8 @@ font-size: 24px;
 .post-options .btn{
   padding: 7px;
 }
+
+.modal-content{
+  margin-top: 200px;
+  border-radius: 0px;
+}
