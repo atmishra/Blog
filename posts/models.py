@@ -19,6 +19,7 @@ class PostManager(models.Manager):
 class Post(models.Model):
 	author = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
 	title = models.CharField(max_length=120)
+	description = models.CharField(max_length=200, blank=True)
 	slug = models.SlugField(unique = True)
 	image = models.FileField(null=True,blank= True) 
 	content = models.TextField()
