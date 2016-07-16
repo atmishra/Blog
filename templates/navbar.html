@@ -29,6 +29,17 @@
                         </li>
                     {% endif %}
                 </ul>
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav navbar-right">
+                      <li><a><span class="glyphicon glyphicon-user"></span>&nbsp;<small>Hi, {{ user.username }}</small></a></li>
+                      <li><a href="{% url "logout" %}"><small>Logout</small></a></li>
+                {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                  
+                  <li><a href="{% url "login" %}">Login</a></li>
+                  
+                </ul>
+            {% endif %}
             </div>
             <!-- /.navbar-collapse -->
         </div>

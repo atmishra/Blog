@@ -28,7 +28,7 @@
 	                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	                    <div class="post-heading">
 	                        <h1>{{ instance.title }}</h1>
-	                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+	                        <h2 class="subheading">{{instance.description }}</h2>
 	                        <span class="meta">Posted by <a href="#">{% if instance.author.get_full_name%}{{instance.author.get_full_name}}{% endif %}</a> on {{instance.publish}}</span>
 		                </div>
 	                </div>
@@ -44,17 +44,17 @@
 	                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 marked-content">
 					
 							{{instance.get_marked_content}}<br/>
-							<a href="{% url "posts:Home" %}">Back</a>
+							<!-- <a href="{% url "posts:Home" %}">Back</a> -->
 
 					</div>
 				</div>
 			</div>
 		</article>
-		<div class='col-sm-6 col-sm-offset-3'>
+		<!-- <div class='col-sm-6 col-sm-offset-3'>
 		{% post_to_facebook instance.get_absolute_url "Post to Facebook!" %}
 		{% post_to_gplus  instance "Post to Google+!" %}
 		{% post_to_twitter "New Post: {{instance.title}}. Check it out!" object_or_url "Post to Twitter" %}
-		</div>
+		</div> -->
 	{% endblock article %}
 		
 
