@@ -1,0 +1,14 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Are you sure you want to delete {{post.title}}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a href="{% url "posts:delete" post.slug %}" class="btn btn-danger"> <span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
